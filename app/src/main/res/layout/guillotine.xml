@@ -27,7 +27,9 @@
 
         <com.yalantis.guillotine.sample.widget.CanaroTextView
             style="@style/TextView.GuillotineItem"
-            android:text="@string/profile" />
+            android:text="@string/profile"
+            android:id="@+id/pro"
+            />
     </LinearLayout>
 
     <LinearLayout

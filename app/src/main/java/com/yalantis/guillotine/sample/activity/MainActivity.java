@@ -9,6 +9,7 @@ import android.widget.FrameLayout;
 
 import com.yalantis.guillotine.animation.GuillotineAnimation;
 import com.yalantis.guillotine.sample.R;
+import com.yalantis.guillotine.sample.widget.CanaroTextView;
 
 import butterknife.ButterKnife;
 import butterknife.BindView;
@@ -39,13 +40,34 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setTitle(null);
         }
 
-        View guillotineMenu = LayoutInflater.from(this).inflate(R.layout.guillotine, null);
+        final View guillotineMenu = LayoutInflater.from(this).inflate(R.layout.guillotine, null);
         root.addView(guillotineMenu);
 
-        new GuillotineAnimation.GuillotineBuilder(guillotineMenu, guillotineMenu.findViewById(R.id.guillotine_hamburger), contentHamburger)
+
+
+     final GuillotineAnimation guillotineAnimation = new GuillotineAnimation.GuillotineBuilder(guillotineMenu, guillotineMenu.findViewById(R.id.guillotine_hamburger), contentHamburger)
                 .setStartDelay(RIPPLE_DURATION)
                 .setActionBarViewForAnimation(toolbar)
-                .setClosedOnStart(true)
+                .setClosedOnStart(false)
                 .build();
+
+
+        final CanaroTextView canaroTextView;
+
+        canaroTextView = (CanaroTextView) guillotineMenu.findViewById(R.id.pro);
+
+
+        canaroTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+             guillotineAnimation.close();
+
+            }
+        });
+
+
+
     }
 }
