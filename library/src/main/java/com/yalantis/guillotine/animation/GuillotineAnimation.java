@@ -144,7 +144,7 @@ public class GuillotineAnimation {
         return rotationAnimator;
     }
 
-    private ObjectAnimator buildClosingAnimation() {
+    public ObjectAnimator buildClosingAnimation() {
         ObjectAnimator rotationAnimator = initAnimator(ObjectAnimator.ofFloat(mGuillotineView, ROTATION, GUILLOTINE_OPENED_ANGLE, GUILLOTINE_CLOSED_ANGLE));
         rotationAnimator.setDuration((long) (mDuration * GuillotineInterpolator.ROTATION_TIME));
         rotationAnimator.addListener(new Animator.AnimatorListener() {

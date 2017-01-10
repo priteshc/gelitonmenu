@@ -1,5 +1,6 @@
 package com.yalantis.guillotine.sample.activity;
 
+import android.animation.Animator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -61,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
              guillotineAnimation.close();
+
 
             }
         });
